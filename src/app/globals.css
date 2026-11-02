@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Zero border-radius across all boxes, tables, cards, modals, containers, inputs, buttons */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+@layer base {
+  :root {
+    --primary-violet: #3b185f;
+    --primary-yellow: #f59e0b;
+    --light-yellow: #fef3c7;
+    --deep-violet: #230a3a;
+  }
+
+  body {
+    background-color: #fbfafd;
+    color: #1e1b2e;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f0fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8b4fe;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(59, 24, 95, 0.1), 0 8px 12px -6px rgba(245, 158, 11, 0.08);
+}
+
+/* Print utilities */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+}
